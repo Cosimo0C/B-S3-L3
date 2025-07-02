@@ -3,14 +3,13 @@ package cosimocrupi.entities;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.UUID;
 
 @Entity
 @Table(name="Evento")
 public class Evento{
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID")
-    private long id;
+    UUID id;
 
     @Column(name = "Titolo")
     private String titolo;
@@ -45,10 +44,6 @@ public class Evento{
                 ", tipoEvento=" + tipoEvento +
                 ", numeroMassimoPartecipanti=" + numeroMassimoPartecipanti +
                 '}';
-    }
-
-    public long getId() {
-        return id;
     }
 
     public String getTitolo() {
